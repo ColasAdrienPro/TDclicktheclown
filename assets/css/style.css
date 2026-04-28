@@ -1,0 +1,61 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  background-color: rgba(1, 1, 1, 0.249);
+  .title {
+    text-align: center;
+  }
+  .container-img-container {
+    display: flex;
+    justify-content: center;
+    .img-container {
+      position: relative;
+      background-image: url(/assets/img/maison\ blanche.webp);
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      min-height: 80vh;
+      width: 90%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 150px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        transition: all 0.5s ease
+      }
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.play {
+  border-radius: 25px;
+  padding: 25px;
+  font-size: 25px;
+}
+
+#bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footerpara {
+  margin: 25px;
+}
+
+.endmenu {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

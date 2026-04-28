@@ -10,7 +10,7 @@ body {
     justify-content: center;
     .img-container {
       position: relative;
-      background-image: url(/assets/img/maison\ blanche.webp);
+      background-image: url(./assets/img/maison\ blanche.webp);
       background-size: 100%;
       background-repeat: no-repeat;
       background-position: center;

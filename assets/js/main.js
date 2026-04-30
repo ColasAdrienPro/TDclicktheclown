@@ -17,11 +17,35 @@ clown.addEventListener('click', () => {
 
 
 function moveclown() {
-    const randomleft = randomize(0, 100)
-    const randomtop = randomize(0, 100)
-    clown.style.left = randomleft + "%"
-    clown.style.top = randomtop + "%"
+    const containerWidth = sect.clientWidth
+    const containerHeight = sect.clientHeight
+    const clownWidth = clown.offsetWidth
+    const clownHeight = clown.offsetHeight
 
+    const maxLeft = Math.max(containerWidth - clownWidth, 0)
+    const maxTop = Math.max(containerHeight - clownHeight, 0)
+
+    const randomleft = randomize(0, maxLeft)
+    const randomtop = randomize(0, maxTop)
+
+    clown.style.left = randomleft + "px"
+    clown.style.top = randomtop + "px"
+
+}
+
+function keepClownInBounds() {
+    const containerWidth = sect.clientWidth
+    const containerHeight = sect.clientHeight
+    const clownWidth = clown.offsetWidth
+    const clownHeight = clown.offsetHeight
+    const currentLeft = parseInt(clown.style.left || "0", 10)
+    const currentTop = parseInt(clown.style.top || "0", 10)
+
+    const safeLeft = Math.min(Math.max(currentLeft, 0), Math.max(containerWidth - clownWidth, 0))
+    const safeTop = Math.min(Math.max(currentTop, 0), Math.max(containerHeight - clownHeight, 0))
+
+    clown.style.left = safeLeft + "px"
+    clown.style.top = safeTop + "px"
 }
 
 function menu() {
@@ -54,6 +78,8 @@ function menu() {
 }
 
 menu()
+
+window.addEventListener("resize", keepClownInBounds)
 
 
 
